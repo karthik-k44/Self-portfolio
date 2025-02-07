@@ -12,7 +12,7 @@ const Home = () => {
             <img
               src={karthik}
               alt="Profile"
-              className="rounded-full w-64 h-64 md:w-100 md:h-80 object-cover shadow-lg ring-4 ring-gray-200 dark:ring-gray-700 transition-transform duration-300 hover:scale-105"
+              className="rounded-full w-90 h-80 md:w-100 md:h-80 object-cover shadow-lg ring-4 ring-gray-200 dark:ring-gray-700 transition-transform duration-300 hover:scale-105"
             />
           </div>
 
