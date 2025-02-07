@@ -24,8 +24,8 @@ const projects = [
     title: 'Self Portfolio',
     description: 'Self Portfolio, for presenting my skills and projects',
     image: portfolio,
-    github: '',
-    demo: '',
+    github: 'https://github.com/karthik-k44/Self-portfolio/tree/portfolio1',
+    demo: 'https://karthikkarunakaran.netlify.app/',
     tags: ['JS', 'React', 'Tailwind'],
   },
 ];
