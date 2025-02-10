@@ -72,7 +72,7 @@ const Contact = () => {
 
           <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8">
             <form
-              onSubmit={handleSubmit}
+              action='https://formspree.io/f/xjkgoqjq'
               className="space-y-6"
               data-netlify="true"
               name="contact"
