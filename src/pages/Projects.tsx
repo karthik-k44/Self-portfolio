@@ -25,7 +25,7 @@ const projects = [
     images: [cf1,cf2,cf3,cf4,cf5,cf6],
     github: 'https://github.com/karthik-k44/CodeFit',
     demo: 'https://code-fit.vercel.app/',
-    tags: ['Next', 'Tailwind', 'Typescript', 'Mongo DB'],
+    tags: ['Next', 'Tailwind', 'Typescript', 'Mongo DB']
   },
 
   {
