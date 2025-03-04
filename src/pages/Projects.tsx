@@ -11,9 +11,23 @@ import mt2 from "./Assets/Meditrack/mt2.png";
 import mt3 from "./Assets/Meditrack/mt3.png";
 import mt4 from "./Assets/Meditrack/mt4.png";
 import mt5 from "./Assets/Meditrack/mt5.png";
-
+import cf1 from "./Assets/CodeFit/Screenshot 2025-03-04 110710.png"
+import cf2 from "./Assets/CodeFit/Screenshot 2025-03-04 110731.png"
+import cf3 from "./Assets/CodeFit/Screenshot 2025-03-04 110742.png"
+import cf4 from "./Assets/CodeFit/Screenshot 2025-03-04 110751.png"
+import cf5 from "./Assets/CodeFit/Screenshot 2025-03-04 110820.png"
+import cf6 from "./Assets/CodeFit/Screenshot 2025-03-04 110834.png"
 
 const projects = [
+  {
+    title: 'CodeFit',
+    description: "CodeFit is a candidate recruiting web application that validates a candidate's GitHub profile to assist companies in hiring decisions",
+    images: [cf1,cf2,cf3,cf4,cf5,cf6],
+    github: 'https://github.com/karthik-k44/CodeFit',
+    demo: 'https://code-fit.vercel.app/',
+    tags: ['Next', 'Tailwind', 'Typescript', 'Mongo DB'],
+  },
+
   {
     title: 'MediTrack',
     description: 'MediTrack is an intuitive and user-friendly platform designed to help users efficiently track their medications, appointments, and health records.',
