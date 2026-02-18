@@ -1,4 +1,3 @@
-import React from 'react';
 import { Github as GitHub, Linkedin, Mail } from 'lucide-react';
 import karthik from "./Assets/selfimage.jpg"
 
