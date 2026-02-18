@@ -1,5 +1,5 @@
 import { Github as GitHub, Linkedin, Mail } from 'lucide-react';
-import karthik from "./Assets/selfimage.jpg"
+import karthik from "./Assets/karthik-image.png"
 
 const Home = () => {
   return (
