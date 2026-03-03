@@ -2,7 +2,6 @@ import React from 'react';
 import { ExternalLink, Github as GitHub } from 'lucide-react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import webgame from "./Assets/webgame.png";
 import calorie from "./Assets/calorie calculator.png";
 import portfolio from "./Assets/portfolio.png";
 import meditrack from "./Assets/Meditrack/meditrack.png";
@@ -17,6 +16,8 @@ import cf3 from "./Assets/CodeFit/Screenshot 2025-03-04 110742.png"
 import cf4 from "./Assets/CodeFit/Screenshot 2025-03-04 110751.png"
 import cf5 from "./Assets/CodeFit/Screenshot 2025-03-04 110820.png"
 import cf6 from "./Assets/CodeFit/Screenshot 2025-03-04 110834.png"
+import od1 from "./Assets/OceanDefender/od1.png"
+import od2 from "./Assets/OceanDefender/od2.png"
 
 const projects = [
   {
@@ -37,11 +38,11 @@ const projects = [
     tags: ['React', 'Tailwind', 'Typescript', 'Firebase'],
   },
   {
-    title: 'JS Web Game',
-    description: 'This HTML5 game, Galaxy Defender, features a player navigating a canvas-based environment with a spaceship while fending off various enemies using projectiles.',
-    images: [webgame],
-    github: 'https://github.com/karthik-k44/JS-web-game-',
-    demo: '',
+    title: 'Ocean Defender',
+    description: 'Ocean Defender, features a player navigating a canvas-based environment with a spaceship while fending off various enemies using projectiles.',
+    images: [od1,od2],
+    github: 'https://github.com/karthik-k44/Ocean-Defender',
+    demo: 'https://ocean-defender.vercel.app/',
     tags: ['HTML', 'CSS', 'JS'],
   },
   {
