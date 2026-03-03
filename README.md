@@ -1,88 +1,94 @@
 # Karthik Portfolio
 
-Personal portfolio web app built with React, TypeScript, Vite, and Tailwind CSS.
+A personal portfolio website built with React, TypeScript, Vite, and Tailwind CSS.
 
-## Live Demo
+## Overview
 
-- https://karthikkarunakaran.netlify.app/
+This project showcases:
 
-## Features
-
-- Multi-page portfolio using React Router
-- Sections for Home, Projects, About, and Contact
-- Dark/light theme toggle
-- Project gallery cards with image carousel
-- External links to GitHub, LinkedIn, and project demos
-- Contact form integrated with Formspree
-- Responsive layout for mobile and desktop
+- Professional profile and social links
+- Skills (frontend, backend, database, tools, and soft skills)
+- Project cards with image carousel, GitHub links, and demos
+- Contact section with a working form
+- Resume page with one-click open and download
 
 ## Tech Stack
 
 - React 18
 - TypeScript
-- Vite
+- Vite 5
 - Tailwind CSS
 - React Router DOM
-- Lucide React icons
+- Lucide React Icons
 - React Responsive Carousel
 
-## Project Structure
+## Pages and Routes
 
-```text
-src/
-  components/
-    Navbar.tsx
-    ThemeToggle.tsx
-  pages/
-    Home.tsx
-    Projects.tsx
-    About.tsx
-    Contact.tsx
-  App.tsx
-  main.tsx
-```
+- `/` - Home
+- `/about` - About
+- `/skills` - Skills
+- `/projects` - Projects
+- `/contact` - Contact
+- `/resume` - Resume
+
+## Project Highlights
+
+- **CodeFit** - Candidate recruiting app with GitHub profile validation
+- **MediTrack** - Medication and appointment management platform
+- **Ocean Defender** - Canvas-based JavaScript web game
+- **Calorie Calculator** - Calorie search and daily intake helper
+- **Self Portfolio** - Personal portfolio site
 
 ## Getting Started
 
-### Prerequisites
-
-- Node.js 18+ (recommended)
-- npm
-
-### Installation
+### 1. Install dependencies
 
 ```bash
 npm install
 ```
 
-### Run in Development
+### 2. Run in development
 
 ```bash
 npm run dev
 ```
 
-### Build for Production
+### 3. Build for production
 
 ```bash
 npm run build
 ```
 
-### Preview Production Build
+### 4. Preview production build
 
 ```bash
 npm run preview
 ```
 
-## Available Scripts
+## Resume Setup
 
-- `npm run dev`: Start local Vite dev server
-- `npm run build`: Create production build
-- `npm run preview`: Preview production build locally
-- `npm run lint`: Run ESLint checks
+The resume feature is configured in:
+
+- `src/constants/resume.ts`
+
+Current setup expects this file:
+
+- `public/Karthik_K_Resume.pdf`
+
+If you change the resume file name, update:
+
+- `url` and `fileName` in `src/constants/resume.ts`
 
 ## Contact
 
-- GitHub: https://github.com/karthik-k44
-- LinkedIn: https://www.linkedin.com/in/karthik-k-7340342aa/
-- Email: Karthikkarunakaran444@gmail.com
+- Email: `karthikkarunakaran444@gmail.com`
 - Location: Thrissur, Kerala
+- GitHub: `https://github.com/karthik-k44`
+- LinkedIn: `https://www.linkedin.com/in/karthik-k-7340342aa/`
+
+## Scripts
+
+- `npm run dev` - Start dev server
+- `npm run build` - Build app
+- `npm run preview` - Preview build
+- `npm run lint` - Run ESLint
