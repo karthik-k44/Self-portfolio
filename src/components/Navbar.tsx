@@ -8,9 +8,11 @@ const Navbar = () => {
 
   const navItems = [
     { path: '/', label: 'Home' },
-    { path: '/projects', label: 'Projects' },
     { path: '/about', label: 'About' },
+    { path: '/skills', label: 'Skills' },
+    { path: '/projects', label: 'Projects' },
     { path: '/contact', label: 'Contact' },
+    { path: '/resume', label: 'Resume' },
   ];
 
   return (
