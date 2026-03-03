@@ -15,7 +15,7 @@ const Resume = () => {
                     Resume
                   </div>
                   <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
-                    Karthik K Resume
+                    Karthik K
                   </h1>
                   <p className="mt-3 text-gray-600 dark:text-gray-300">
                     Open the PDF in a new tab and download it in one click.
