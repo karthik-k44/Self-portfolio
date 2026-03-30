@@ -8,9 +8,11 @@ const Navbar = () => {
 
   const navItems = [
     { path: '/', label: 'Home' },
-    { path: '/projects', label: 'Projects' },
     { path: '/about', label: 'About' },
+    { path: '/skills', label: 'Skills' },
+    { path: '/projects', label: 'Projects' },
     { path: '/contact', label: 'Contact' },
+    { path: '/resume', label: 'Resume' },
   ];
 
   return (
@@ -29,9 +31,12 @@ const Navbar = () => {
               <NavLink
                 key={item.path}
                 to={item.path}
+                end={item.path === '/'}
                 className={({ isActive }) =>
-                  `text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors ${
-                    isActive ? 'text-blue-600 dark:text-blue-400 font-semibold' : ''
+                  `transition-colors ${
+                    isActive
+                      ? 'text-blue-600 dark:text-blue-400 font-semibold'
+                      : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'
                   }`
                 }
               >
@@ -62,6 +67,7 @@ const Navbar = () => {
               <NavLink
                 key={item.path}
                 to={item.path}
+                end={item.path === '/'}
                 onClick={() => setIsOpen(false)}
                 className={({ isActive }) =>
                   `block px-3 py-2 rounded-md text-base font-medium ${
