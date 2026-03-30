@@ -20,24 +20,40 @@ import portfolio from "./Assets/PortFolio/portfolio.png"
 import pf1 from "./Assets/PortFolio/pf1.png"
 import pf2 from "./Assets/PortFolio/pf2.png"
 import pf3 from "./Assets/PortFolio/pf3.png"
+import ss0 from "./Assets/SkillSphere/ss1.png"
+import ss1 from "./Assets/SkillSphere/ss1.png"
+import ss2 from "./Assets/SkillSphere/ss2.png"
+import ss3 from "./Assets/SkillSphere/ss3.png"
+import ss4 from "./Assets/SkillSphere/ss4.png"
 
 const projects = [
   {
-    title: 'CodeFit',
-    description: "CodeFit is a candidate recruiting web application that validates a candidate's GitHub profile to assist companies in hiring decisions",
-    images: [cf1,cf2,cf3,cf4,cf5,cf6],
-    github: 'https://github.com/karthik-k44/CodeFit',
-    demo: 'https://code-fit.vercel.app/',
-    tags: ['Next', 'Tailwind', 'Typescript', 'Mongo DB']
+    title: "SkillSphere",
+    description:
+      "SkillSphere is a full-stack TypeScript project focused on helping users understand their skills, improve with targeted guidance, and prepare strong resume content.",
+    images: [ss0, ss1, ss2, ss3, ss4],
+    github: "https://github.com/karthik-k44/Skill-Sphere",
+    demo: "https://skill-sphere-portal.vercel.app",
+    tags: ["React.JS", "NodeJs", "Express", "Redux Toolkit", "Formik", "Tailwind", "Typescript", "Mongo DB", "OpenAI API", "JWT Authentication"],
+  },
+  {
+    title: "CodeFit",
+    description:
+      "CodeFit is a candidate recruiting web application that validates a candidate's GitHub profile to assist companies in hiring decisions",
+    images: [cf1, cf2, cf3, cf4, cf5, cf6],
+    github: "https://github.com/karthik-k44/CodeFit",
+    demo: "https://code-fit.vercel.app/",
+    tags: ["Next", "Tailwind", "Typescript", "Mongo DB"],
   },
 
   {
-    title: 'MediTrack',
-    description: 'MediTrack is an intuitive and user-friendly platform designed to help users efficiently track their medications, appointments, and health records.',
-    images: [meditrack,mt1,mt2,mt3,mt4,mt5],
-    github: 'https://github.com/karthik-k44/Medication-Management-App',
-    demo: 'https://meditrackapplication.netlify.app/',
-    tags: ['React', 'Tailwind', 'Typescript', 'Firebase'],
+    title: "MediTrack",
+    description:
+      "MediTrack is an intuitive and user-friendly platform designed to help users efficiently track their medications, appointments, and health records.",
+    images: [meditrack, mt1, mt2, mt3, mt4, mt5],
+    github: "https://github.com/karthik-k44/Medication-Management-App",
+    demo: "https://meditrackapplication.netlify.app/",
+    tags: ["React", "Tailwind", "Typescript", "Firebase"],
   },
   {
     title: 'Ocean Defender',
@@ -48,12 +64,13 @@ const projects = [
     tags: ['React', 'Tailwind', 'Typescript',],
   },
   {
-    title: 'Calorie Calculator',
-    description: 'Calorie Calculator is your one-stop solution for managing daily caloric intake. Instantly search for dishes and access their calorie information to make informed dietary choices.',
+    title: "Calorie Calculator",
+    description:
+      "Calorie Calculator is your one-stop solution for managing daily caloric intake. Instantly search for dishes and access their calorie information to make informed dietary choices.",
     images: [calorie],
-    github: 'https://github.com/karthik-k44/Calorie_Calculator/',
-    demo: 'https://calorie-calculator-hackathon.netlify.app/',
-    tags: ['JS', 'React', 'Tailwind'],
+    github: "https://github.com/karthik-k44/Calorie_Calculator/",
+    demo: "https://calorie-calculator-hackathon.netlify.app/",
+    tags: ["JS", "React", "Tailwind"],
   },
   {
     title: 'Self Portfolio',
