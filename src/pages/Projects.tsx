@@ -20,7 +20,6 @@ import portfolio from "./Assets/PortFolio/portfolio.png"
 import pf1 from "./Assets/PortFolio/pf1.png"
 import pf2 from "./Assets/PortFolio/pf2.png"
 import pf3 from "./Assets/PortFolio/pf3.png"
-import ss0 from "./Assets/SkillSphere/ss1.png"
 import ss1 from "./Assets/SkillSphere/ss1.png"
 import ss2 from "./Assets/SkillSphere/ss2.png"
 import ss3 from "./Assets/SkillSphere/ss3.png"
@@ -31,7 +30,7 @@ const projects = [
     title: "SkillSphere",
     description:
       "SkillSphere is a full-stack TypeScript project focused on helping users understand their skills, improve with targeted guidance, and prepare strong resume content.",
-    images: [ss0, ss1, ss2, ss3, ss4],
+    images: [ ss1, ss2, ss3, ss4],
     github: "https://github.com/karthik-k44/Skill-Sphere",
     demo: "https://skill-sphere-portal.vercel.app",
     tags: ["React.JS", "NodeJs", "Express", "Redux Toolkit", "Formik", "Tailwind", "Typescript", "Mongo DB", "OpenAI API", "JWT Authentication"],
