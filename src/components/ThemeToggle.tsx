@@ -1,21 +1,36 @@
 import React from 'react';
 import { Moon, Sun } from 'lucide-react';
 
+const getInitialTheme = () => {
+  if (typeof window === 'undefined') {
+    return false;
+  }
+
+  const savedTheme = window.localStorage.getItem('theme');
+
+  if (savedTheme === 'dark') {
+    return true;
+  }
+
+  if (savedTheme === 'light') {
+    return false;
+  }
+
+  return window.matchMedia('(prefers-color-scheme: dark)').matches;
+};
+
 const ThemeToggle = () => {
-  const [isDark, setIsDark] = React.useState(false);
+  const [isDark, setIsDark] = React.useState(getInitialTheme);
 
   React.useEffect(() => {
-    if (isDark) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
+    document.documentElement.classList.toggle('dark', isDark);
+    window.localStorage.setItem('theme', isDark ? 'dark' : 'light');
   }, [isDark]);
 
   return (
     <button
       onClick={() => setIsDark(!isDark)}
-      className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+      className="theme-toggle"
       aria-label="Toggle theme"
     >
       {isDark ? <Sun size={20} /> : <Moon size={20} />}

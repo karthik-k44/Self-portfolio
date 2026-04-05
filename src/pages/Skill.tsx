@@ -1,14 +1,54 @@
-import { Code, Database, Layout, Users } from "lucide-react";
+import { Code, Database, Layout, Users } from 'lucide-react';
 
 const Skills = () => {
-    const skills = [
-    { name: 'Frontend Development', icon: <Layout className="w-6 h-6" />, items: ['React', 'TypeScript', 'Tailwind CSS', "Redux Toolkit", "Formik",  "BrightScript (Roku)", "HTML5", "CSS3", ] },
-    { name: 'Backend Development', icon: <Code className="w-6 h-6" />, items: [ "Node.js", "Express.js", "RESTful API Development", "Request Validation", "Response Serialization"] },
-    { name: 'Database', icon: <Database className="w-6 h-6" />, items: ['MongoDB', 'PostgreSQL'] },
-    { name: 'Tools Dev Practices', icon: <Code className="w-6 h-6" />, items: ['Git', 'GitHub', 'Version Control', 'VS Code', 'Debugging', 'Code Reviews', "ESLint", "Prettier"] },
+  const skills = [
+    {
+      name: 'Frontend Development',
+      icon: <Layout className="h-6 w-6" />,
+      items: [
+        'React',
+        'TypeScript',
+        'Tailwind CSS',
+        'Redux Toolkit',
+        'Formik',
+        'BrightScript (Roku)',
+        'HTML5',
+        'CSS3',
+      ],
+    },
+    {
+      name: 'Backend Development',
+      icon: <Code className="h-6 w-6" />,
+      items: [
+        'Node.js',
+        'Express.js',
+        'RESTful API Development',
+        'Request Validation',
+        'Response Serialization',
+      ],
+    },
+    {
+      name: 'Database',
+      icon: <Database className="h-6 w-6" />,
+      items: ['MongoDB', 'PostgreSQL'],
+    },
+    {
+      name: 'Tools Dev Practices',
+      icon: <Code className="h-6 w-6" />,
+      items: [
+        'Git',
+        'GitHub',
+        'Version Control',
+        'VS Code',
+        'Debugging',
+        'Code Reviews',
+        'ESLint',
+        'Prettier',
+      ],
+    },
     {
       name: 'Soft Skills',
-      icon: <Users className="w-6 h-6" />,
+      icon: <Users className="h-6 w-6" />,
       items: [
         'Communication',
         'Team Collaboration',
@@ -18,26 +58,37 @@ const Skills = () => {
         'Ownership and Accountability',
         'Attention to Detail',
         'Continuous Learning',
-      ]
-    }
+      ],
+    },
   ];
+
   return (
-    <div className="py-24 min-h-screen bg-gray-50 dark:bg-gray-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">Skills</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div className="page-shell">
+      <div className="page-container">
+        <div className="page-intro fade-up">
+          <div className="page-kicker">Capabilities</div>
+          <h2 className="page-title page-title--compact">Skills</h2>
+          <p className="page-subtitle">
+            A balanced stack across frontend, backend, data, and collaboration.
+          </p>
+        </div>
+
+        <div className="skill-grid">
           {skills.map((skill, index) => (
-            <div key={index} className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
-              <div className="flex items-center mb-4">
-                <div className="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg text-blue-600 dark:text-blue-400 mr-3">
-                  {skill.icon}
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{skill.name}</h3>
+            <div
+              key={skill.name}
+              className="panel-card interactive-card skill-card fade-up"
+              style={{ animationDelay: `${index * 90}ms` }}
+            >
+              <div className="skill-card-header">
+                <div className="skill-icon">{skill.icon}</div>
+                <h3 className="skill-title">{skill.name}</h3>
               </div>
-              <ul className="space-y-2">
-                {skill.items.map((item, itemIndex) => (
-                  <li key={itemIndex} className="text-gray-600 dark:text-gray-300">
-                    • {item}
+
+              <ul className="skill-list">
+                {skill.items.map((item) => (
+                  <li key={item} className="skill-list-item">
+                    {item}
                   </li>
                 ))}
               </ul>
@@ -46,7 +97,7 @@ const Skills = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Skills
+export default Skills;
