@@ -1,6 +1,6 @@
 export const resumeConfig = {
-  url: '/Karthik_K_Resume.pdf',
-  fileName: 'Karthik_K_Resume.pdf',
+  url: '/Karthik-CV.pdf',
+  fileName: 'Karthik-CV.pdf',
 };
 
 export const openAndDownloadResume = () => {
