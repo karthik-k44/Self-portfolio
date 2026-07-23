@@ -1,3 +1,109 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-ink-950 text-ink-100 font-sans antialiased;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(34, 205, 242, 0.08), transparent 70%),
+      radial-gradient(ellipse 60% 40% at 80% 110%, rgba(6, 174, 212, 0.06), transparent 70%);
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    @apply bg-accent-500/30 text-white;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-ink-950;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-ink-700 rounded-full border-2 border-ink-950;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-ink-600;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply px-6 py-24 md:px-10 md:py-32 lg:px-16;
+  }
+
+  .container-narrow {
+    @apply mx-auto max-w-6xl;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.25em] text-accent-400;
+  }
+
+  .heading-xl {
+    @apply font-display font-bold leading-[1.05] tracking-tight text-ink-50;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-accent-300 via-accent-400 to-accent-500 bg-clip-text text-transparent;
+  }
+
+  .card {
+    @apply rounded-2xl border border-ink-800 bg-ink-900/60 backdrop-blur-sm transition-all duration-300;
+  }
+
+  .card-hover {
+    @apply hover:border-accent-500/40 hover:bg-ink-900/80 hover:shadow-[0_0_40px_-12px_rgba(34,205,242,0.35)];
+  }
+}
+
+@layer utilities {
+  /* Scroll reveal — JS adds .is-visible */
+  .reveal {
+    opacity: 0;
+    transform: translateY(36px);
+    transition:
+      opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+    will-change: opacity, transform;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-scale {
+    opacity: 0;
+    transform: scale(0.94);
+    transition:
+      opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+    will-change: opacity, transform;
+  }
+  .reveal-scale.is-visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+}

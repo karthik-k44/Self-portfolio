@@ -1,25 +1,28 @@
-import { Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import Projects from './pages/Projects';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import Resume from './pages/Resume';
-import Skills from './pages/Skill';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import Hero from '@/components/sections/Hero';
+import About from '@/components/sections/About';
+import Skills from '@/components/sections/Skills';
+import Experience from '@/components/sections/Experience';
+import Projects from '@/components/sections/Projects';
+import Contact from '@/components/sections/Contact';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 function App() {
+  const containerRef = useScrollReveal<HTMLDivElement>();
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <div ref={containerRef} className="relative min-h-screen overflow-x-hidden">
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/skills" element={<Skills />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/resume" element={<Resume />} />
-      </Routes>
+      <main>
+        <Hero />
+        <About />
+        <Skills />
+        <Experience />
+        <Projects />
+        <Contact />
+      </main>
+      <Footer />
     </div>
   );
 }
