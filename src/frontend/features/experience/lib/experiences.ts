@@ -6,6 +6,7 @@ export const experiences: ExperienceType[] = [
     company: 'Codenzic',
     period: 'August 2026 — Present',
     location: 'Kochi, Kerala',
+    current: true,
     description:
       'Vendor Admin Portal (Service Management Platform) — building client-facing product portals and the company website.',
     achievements: [

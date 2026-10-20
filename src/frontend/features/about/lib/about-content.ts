@@ -1,52 +1,48 @@
-import { Briefcase, Rocket, Server, Sparkles } from 'lucide-react';
+import { Languages, Rocket, Server, Sparkles } from 'lucide-react';
 
-export const about = {
-  title: 'Full Stack Web Developer',
-  paragraphs: [
-    "I'm a Full Stack Web Developer with 1+ years of hands-on experience in a product-based environment, building and deploying scalable web applications using the MERN stack.",
-    'I specialize in designing and consuming RESTful APIs, integrating frontend and backend systems, and managing state with modern tools like Redux Toolkit. I work well in Agile teams, contribute to end-to-end feature development, and care deeply about performance, scalability, and clean architecture.',
+export const intro = {
+  lead: [
+    "I'm a developer who cares about the whole journey — ",
+    'schema to screen',
+    '. I turn messy requirements into typed services, reusable components and interfaces people enjoy using.',
   ],
-  highlights: [
-    { label: 'Years experience', value: '1+' },
-    { label: 'Projects shipped', value: '6+' },
-    { label: 'Stack', value: 'MERN' },
-  ],
+  body: 'Product-company experience, Agile teams, client demos and handovers. I like owning features from the first ticket to production.',
 };
 
-export const techMarquee = [
+export const currentRole = {
+  title: 'Frontend Developer',
+  company: 'Codenzic',
+  summary: 'Vendor Admin portal · 8 product epics · delivered in one month.',
+};
+
+export const userGrowth = { value: '600%', label: 'User growth supported' };
+
+export const focusItems = [
+  { icon: Rocket, title: 'End-to-end', desc: 'Ticket to production, in sprints.' },
+  { icon: Server, title: 'API-first', desc: 'Typed service layers and validation.' },
+  { icon: Languages, title: 'Bilingual UI', desc: 'English / Arabic, RTL-ready.' },
+  { icon: Sparkles, title: 'Polished UX', desc: 'Fast, accessible, delightful.' },
+];
+
+export const techBand = [
   'React',
   'TypeScript',
   'Node.js',
   'Express',
-  'MongoDB',
   'PostgreSQL',
-  'Tailwind CSS',
+  'MongoDB',
+  'Tailwind',
+  'shadcn/ui',
   'Redux Toolkit',
-  'Next.js',
-  'Firebase',
-  'REST APIs',
-  'Git',
+  'React Query',
 ];
 
-export const focusItems = [
-  {
-    icon: Rocket,
-    title: 'End-to-end delivery',
-    desc: 'From database schema to pixel-perfect UI, shipped in Agile sprints.',
-  },
-  {
-    icon: Server,
-    title: 'API-first',
-    desc: 'RESTful services with validation, serialization, and clean architecture.',
-  },
-  {
-    icon: Sparkles,
-    title: 'Polished UX',
-    desc: 'Interfaces that feel fast, accessible, and genuinely pleasant to use.',
-  },
-  {
-    icon: Briefcase,
-    title: 'Product mindset',
-    desc: 'Nearly a year building real features in a product-based environment.',
-  },
+export const craftBand = [
+  'Vendor portals',
+  'i18n',
+  'REST APIs',
+  'Design systems',
+  'Dashboards',
+  'Realtime UI',
+  'Clean architecture',
 ];

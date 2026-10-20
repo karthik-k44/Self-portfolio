@@ -34,16 +34,14 @@
 
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
 
   body {
     @apply bg-ink-950 text-ink-100 font-sans antialiased;
-    background-image:
-      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(34, 205, 242, 0.08), transparent 70%),
-      radial-gradient(ellipse 60% 40% at 80% 110%, rgba(6, 174, 212, 0.06), transparent 70%);
-    background-attachment: fixed;
+    overflow-x: clip;
   }
 
   ::selection {
@@ -67,7 +65,7 @@
 
 @layer components {
   .section-padding {
-    @apply px-6 py-24 md:px-10 md:py-32 lg:px-16;
+    @apply px-4 py-24 sm:px-6 md:px-10 md:py-32 lg:px-16;
   }
 
   .container-narrow {
@@ -75,19 +73,28 @@
   }
 
   .eyebrow {
-    @apply inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.25em] text-accent-400;
+    @apply inline-flex items-center gap-2.5 text-xs font-semibold uppercase tracking-[0.28em] text-accent-400;
   }
 
-  .heading-xl {
-    @apply font-display font-bold leading-[1.05] tracking-tight text-ink-50;
+  /* text filled with the cyan → indigo → violet aurora, slowly sweeping */
+  .aurora-text {
+    @apply animate-sweep bg-aurora bg-clip-text text-transparent;
+    background-size: 200% 100%;
   }
 
-  .text-gradient {
-    @apply bg-gradient-to-r from-accent-300 via-accent-400 to-accent-500 bg-clip-text text-transparent;
+  /* outlined display numbers / names */
+  .text-outline {
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(236, 238, 242, 0.45);
   }
 
   .card-hover {
-    @apply hover:border-accent-500/40 hover:bg-ink-900/80 hover:shadow-[0_0_40px_-12px_rgba(34,205,242,0.35)];
+    @apply hover:-translate-y-1 hover:border-accent-500/35 hover:shadow-[0_0_40px_-12px_rgba(34,205,242,0.35)];
+  }
+
+  /* film grain over the whole page */
+  .grain {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
 }
 
@@ -95,16 +102,18 @@
   /* Scroll reveal — JS adds .is-visible */
   .reveal {
     opacity: 0;
-    transform: translateY(36px);
+    transform: translateY(40px);
+    filter: blur(6px);
     transition:
-      opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+      opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+      filter 0.9s cubic-bezier(0.22, 1, 0.36, 1);
     transition-delay: var(--reveal-delay, 0ms);
-    will-change: opacity, transform;
   }
   .reveal.is-visible {
     opacity: 1;
     transform: translateY(0);
+    filter: none;
   }
 
   .reveal-scale {
@@ -114,7 +123,6 @@
       opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
       transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
     transition-delay: var(--reveal-delay, 0ms);
-    will-change: opacity, transform;
   }
   .reveal-scale.is-visible {
     opacity: 1;
@@ -127,8 +135,27 @@
 
   .bg-grid {
     background-image:
-      linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-    background-size: 56px 56px;
+      linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+}
+
+/* Motion off: every animation lands on its final frame, reveals are simply shown. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal,
+  .reveal-scale {
+    opacity: 1;
+    transform: none;
+    filter: none;
   }
 }

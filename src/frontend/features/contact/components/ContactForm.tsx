@@ -39,11 +39,12 @@ export default function ContactForm() {
   };
 
   return (
-    <Card
-      className="reveal p-6 sm:p-7 lg:col-span-3"
-      style={{ ['--reveal-delay' as string]: '120ms' }}
-    >
-      <form onSubmit={handleSubmit}>
+    <Card className="reveal rounded-[22px] bg-ink-900/85 p-6 sm:p-8">
+      <h3 className="font-display text-xl font-semibold tracking-[-0.02em] text-ink-50">
+        Or drop me a message
+      </h3>
+      <p className="mt-1.5 text-sm text-ink-400">A role, a project, or just a hello — it lands straight in my inbox.</p>
+      <form onSubmit={handleSubmit} className="mt-6">
         <div className="grid gap-5 sm:grid-cols-2">
           {fields.map((field) => (
             <div key={field.name}>

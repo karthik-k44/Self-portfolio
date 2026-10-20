@@ -8,6 +8,11 @@ export default {
       fontFamily: {
         sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         display: ['Sora', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'monospace'],
+      },
+      backgroundImage: {
+        aurora: 'linear-gradient(100deg, #22cdf2 0%, #6366f1 55%, #a78bfa 100%)',
+        'aurora-vertical': 'linear-gradient(180deg, #22cdf2 0%, #6366f1 55%, #a78bfa 100%)',
       },
       colors: {
         ink: {
@@ -100,8 +105,49 @@ export default {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(-50%)' },
         },
+        // hero letters rising out of their mask
+        rise: {
+          to: { transform: 'translateY(0)' },
+        },
+        // aurora gradient sliding across text
+        sweep: {
+          to: { backgroundPosition: '100% 0' },
+        },
+        drift: {
+          '50%': { transform: 'translate(60px, 40px) scale(1.1)' },
+          '100%': { transform: 'translate(-40px, 70px) scale(0.95)' },
+        },
+        blink: {
+          '50%': { opacity: '0' },
+        },
+        // slot-machine swap through three stacked words (+ the first repeated)
+        slot: {
+          '0%, 28%': { transform: 'translateY(0)' },
+          '33%, 61%': { transform: 'translateY(-1.2em)' },
+          '66%, 95%': { transform: 'translateY(-2.4em)' },
+          '100%': { transform: 'translateY(-3.6em)' },
+        },
+        wheel: {
+          '0%': { transform: 'translateY(0)', opacity: '1' },
+          '80%': { transform: 'translateY(14px)', opacity: '0' },
+          '100%': { opacity: '0' },
+        },
+        lift: {
+          to: { transform: 'translateY(-100%)' },
+        },
+        type: {
+          to: { width: '11ch' },
+        },
       },
       animation: {
+        rise: 'rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards',
+        sweep: 'sweep 6s ease-in-out infinite alternate',
+        drift: 'drift 18s ease-in-out infinite alternate',
+        blink: 'blink 1s steps(1) infinite',
+        slot: 'slot 7.5s cubic-bezier(0.22, 1, 0.36, 1) infinite',
+        wheel: 'wheel 1.8s cubic-bezier(0.22, 1, 0.36, 1) infinite',
+        lift: 'lift 0.8s cubic-bezier(0.22, 1, 0.36, 1) 1.5s forwards',
+        type: 'type 1s steps(11) 0.2s forwards',
         'fade-up': 'fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards',
         'fade-in': 'fade-in 0.9s ease forwards',
         float: 'float 6s ease-in-out infinite',

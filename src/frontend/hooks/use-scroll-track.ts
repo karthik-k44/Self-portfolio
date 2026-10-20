@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { PrefersReducedMotion } from '@/frontend/lib/motion-preference';
 
 type ScrollTrackState = {
   /** 0–1: how far the scroll tip has travelled down the element */
@@ -23,7 +24,7 @@ export function useScrollTrack<T extends HTMLElement = HTMLElement>(anchor = 0.5
 
     const markers = () => el.querySelectorAll<HTMLElement>('[data-track-marker]');
 
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    if (PrefersReducedMotion()) {
       setState({ progress: 1, reached: markers().length });
       return;
     }

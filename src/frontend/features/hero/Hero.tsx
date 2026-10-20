@@ -1,133 +1,78 @@
-import { ArrowDown, Github, Linkedin, MapPin, Sparkles } from 'lucide-react';
-import profileImage from '@/frontend/assets/karthik-image.png';
+import { ArrowRight } from 'lucide-react';
 import { Button } from '@/frontend/components/button/Button';
 import { ScrollToSection } from '@/frontend/config/navigation';
 import { profile } from '@/frontend/config/profile';
+import { useMagnetic } from '@/frontend/hooks/use-magnetic';
+import HeroName from './components/HeroName';
+import HeroPortrait from './components/HeroPortrait';
+import HeroStats from './components/HeroStats';
+import RotatingWords from './components/RotatingWords';
+import { currentCompany, heroLead, rotatingWords } from './lib/hero-content';
 
 export default function Hero() {
+  const workRef = useMagnetic<HTMLButtonElement>();
+  const cvRef = useMagnetic<HTMLAnchorElement>();
+
   return (
-    <section id="home" className="relative flex min-h-screen items-center overflow-hidden">
-      {/* background layers */}
-      <div className="absolute inset-0 bg-grid opacity-60" />
-      <div className="absolute -top-40 left-1/2 h-[36rem] w-[36rem] -translate-x-1/2 rounded-full bg-accent-500/10 blur-[140px]" />
-      <div className="absolute bottom-0 right-0 h-72 w-72 rounded-full bg-accent-700/10 blur-[120px]" />
+    <section id="home" className="relative flex min-h-[100svh] items-center overflow-hidden pb-20 pt-28 sm:pt-32">
+      {/* aurora blobs + fading grid */}
+      <div className="absolute -left-[120px] -top-[140px] h-[520px] w-[520px] animate-drift rounded-full bg-cyan-700 opacity-50 blur-[90px]" />
+      <div className="absolute -right-[160px] top-[10%] h-[460px] w-[460px] animate-drift rounded-full bg-indigo-700 opacity-40 blur-[90px] [animation-delay:-6s]" />
+      <div className="absolute -bottom-[180px] left-[35%] h-[380px] w-[380px] animate-drift rounded-full bg-violet-600 opacity-25 blur-[90px] [animation-delay:-12s]" />
+      <div className="bg-grid absolute inset-0 opacity-50 [mask-image:radial-gradient(ellipse_70%_60%_at_50%_40%,#000_30%,transparent_75%)]" />
 
-      <div className="container-narrow relative z-10 w-full px-4 pt-20 pb-12 sm:px-6 md:px-10 md:pt-28 md:pb-16 lg:px-16">
-        <div className="grid items-center gap-8 sm:gap-10 lg:grid-cols-12 lg:gap-12">
-          {/* left — copy */}
-          <div className="text-center sm:text-left lg:col-span-7">
-            <span className="mx-auto inline-flex items-center gap-2 rounded-full border border-ink-700 bg-ink-900/60 px-4 py-1.5 text-xs font-medium text-ink-200 backdrop-blur-sm animate-fade-in sm:mx-0">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-400 opacity-75" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-accent-400" />
-              </span>
-              Available for new opportunities
+      <div className="container-narrow relative z-[2] grid w-full items-center gap-20 px-4 sm:px-6 md:px-10 lg:grid-cols-[1.25fr_0.9fr] lg:gap-12 lg:px-16">
+        <div className="md:text-center lg:text-left">
+          <span className="inline-flex items-center gap-2.5 rounded-full border border-emerald-400/30 bg-emerald-400/[0.08] py-2 pl-3 pr-4 text-[13px] text-ink-100">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
             </span>
+            Available for new opportunities
+          </span>
 
-            <h1 className="mx-auto mt-6 max-w-[14rem] font-display text-4xl font-bold leading-[0.95] tracking-tight text-ink-50 sm:mx-0 sm:max-w-none sm:text-5xl lg:text-7xl">
-              <span className="block animate-fade-up opacity-0 [animation-delay:100ms]">
-                Hi, I&apos;m{' '}
-                <span className="text-gradient">{profile.firstName}</span>
-              </span>
-              <span
-                className="mt-2 block animate-fade-up opacity-0 [animation-delay:240ms]"
-                style={{ ['--reveal-delay' as string]: '140ms' }}
-              >
-                Full Stack Developer
-              </span>
-            </h1>
+          <p className="mt-7 whitespace-nowrap font-mono text-[12.5px] text-ink-400 sm:text-[15px]">
+            <span className="text-accent-400">const</span> developer = &quot;{profile.name}&quot;
+            <span className="ml-1 inline-block h-[1.1em] w-[9px] translate-y-[3px] animate-blink bg-accent-400" />
+          </p>
 
-            <p
-              className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-ink-300 animate-fade-up opacity-0 sm:mx-0 sm:text-lg [animation-delay:380ms]"
-            >
-              {profile.tagline} I turn ideas into fast, reliable products from REST
-              APIs to polished UI.
-            </p>
+          <HeroName first="Karthik" last="Karunakaran" />
 
-            <div
-              className="mt-8 flex flex-wrap items-center justify-center gap-3 animate-fade-up opacity-0 sm:justify-start [animation-delay:520ms]"
-            >
-              <Button onClick={() => ScrollToSection('projects')}>
-                <Sparkles size={16} />
-                View my work
-              </Button>
-              <Button variant="outline" asChild>
-                <a href={profile.resumeUrl} target="_blank" rel="noopener noreferrer">
-                  Download CV
-                </a>
-              </Button>
-            </div>
+          <p className="mt-5 flex flex-wrap items-baseline gap-x-[0.3em] font-display text-[clamp(22px,3vw,36px)] font-semibold leading-[1.2] tracking-[-0.02em] text-ink-100 md:justify-center lg:justify-start">
+            I build <RotatingWords words={rotatingWords} />
+          </p>
 
-            <div
-              className="mt-10 flex flex-wrap items-center justify-center gap-5 text-sm text-ink-400 animate-fade-up opacity-0 sm:justify-start [animation-delay:640ms]"
-            >
-              <span className="inline-flex items-center gap-2">
-                <MapPin size={15} className="text-accent-400" />
-                {profile.location}
-              </span>
-              <span className="h-4 w-px bg-ink-700" />
-              <a
-                href={profile.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 transition-colors hover:text-ink-100"
-              >
-                <Github size={16} />
-                GitHub
+          <p className="mt-5 max-w-xl text-base leading-relaxed text-ink-300 sm:text-lg md:mx-auto lg:mx-0">
+            {heroLead} Currently at{' '}
+            <strong className="font-semibold text-ink-100">{currentCompany.name}</strong>,{' '}
+            {currentCompany.city}.
+          </p>
+
+          <div className="mt-9 flex gap-3 md:justify-center lg:justify-start">
+            <Button ref={workRef} onClick={() => ScrollToSection('projects')} className="flex-1 sm:flex-none">
+              View my work
+              <ArrowRight size={16} />
+            </Button>
+            <Button variant="outline" asChild className="flex-1 sm:flex-none">
+              <a ref={cvRef} href={profile.resumeUrl} target="_blank" rel="noopener noreferrer">
+                Download CV
               </a>
-              <a
-                href={profile.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 transition-colors hover:text-ink-100"
-              >
-                <Linkedin size={16} />
-                LinkedIn
-              </a>
-            </div>
+            </Button>
           </div>
 
-          {/* right — decorative monogram card */}
-          <div className="w-full lg:col-span-5">
-            <div className="relative mx-auto aspect-square w-full max-w-[18rem] sm:max-w-[22rem] lg:max-w-[28rem]">
-              {/* rotating ring */}
-              <div className="absolute inset-0 hidden animate-spin-slow rounded-full border border-dashed border-ink-700/70 sm:block" />
-              <div className="absolute inset-6 hidden rounded-full border border-ink-800 sm:block" />
-
-              {/* floating code chips */}
-              <div className="absolute left-0 top-10 hidden animate-float rounded-xl border border-ink-700 bg-ink-900/80 px-4 py-2.5 text-xs font-medium text-ink-200 shadow-xl backdrop-blur-md sm:block [animation-delay:0.5s]">
-                {'{ MERN }'}
-              </div>
-              <div className="absolute right-0 top-1/2 hidden animate-float rounded-xl border border-ink-700 bg-ink-900/80 px-4 py-2.5 text-xs font-medium text-accent-300 shadow-xl backdrop-blur-md sm:block [animation-delay:1.5s]">
-                React · TS
-              </div>
-              <div className="absolute bottom-12 left-8 hidden animate-float rounded-xl border border-ink-700 bg-ink-900/80 px-4 py-2.5 text-xs font-medium text-ink-200 shadow-xl backdrop-blur-md sm:block [animation-delay:2.2s]">
-                Node · Express
-              </div>
-
-              {/* monogram */}
-              <div className="absolute inset-0 flex items-center justify-center rounded-full bg-gradient-to-br from-ink-900 via-ink-900 to-ink-800 shadow-2xl ring-1 ring-ink-700/50 sm:inset-10">
-                <img
-                  src={profileImage}
-                  alt="Karthik"
-                  className="h-full w-full rounded-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
+          <HeroStats />
         </div>
+
+        <HeroPortrait />
       </div>
 
       {/* scroll cue */}
       <button
         onClick={() => ScrollToSection('about')}
-        className="absolute bottom-6 left-1/2 z-10 -translate-x-1/2 text-ink-500 transition-colors hover:text-accent-400"
         aria-label="Scroll to about"
+        className="absolute bottom-6 left-1/2 z-[2] hidden h-[42px] w-[26px] -translate-x-1/2 rounded-full border-[1.5px] border-ink-700 md:block"
       >
-        <span className="flex flex-col items-center gap-2 text-[10px] uppercase tracking-[0.3em]">
-          Scroll
-          <ArrowDown size={16} className="animate-bounce" />
-        </span>
+        <span className="absolute left-1/2 top-2 -ml-0.5 h-2 w-1 animate-wheel rounded bg-accent-400" />
       </button>
     </section>
   );
