@@ -23,7 +23,7 @@ export const projects: ProjectType[] = [
     glow: 'from-violet-600 to-violet-400',
     featured: true,
     live: true,
-    glimpseTheme: 'dark',
+    glimpseTheme: 'light',
   },
   {
     title: 'CodeFit',
