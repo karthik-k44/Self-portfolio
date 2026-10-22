@@ -5,7 +5,7 @@ import { profile } from '@/frontend/config/profile';
 export default function Footer() {
   return (
     <footer className="relative border-t border-ink-800/80">
-      <div className="container-narrow flex flex-col items-center justify-between gap-4 px-4 py-7 text-[13px] text-ink-500 sm:flex-row sm:px-6 md:px-10 lg:px-16">
+      <div className="container-narrow flex flex-col items-center justify-between gap-4 py-7 text-[13px] text-ink-500 sm:flex-row">
         <p>
           © {new Date().getFullYear()} {profile.name}
         </p>

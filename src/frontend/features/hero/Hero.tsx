@@ -21,7 +21,7 @@ export default function Hero() {
       <div className="absolute -bottom-[180px] left-[35%] h-[380px] w-[380px] animate-drift rounded-full bg-violet-600 opacity-25 blur-[90px] [animation-delay:-12s]" />
       <div className="bg-grid absolute inset-0 opacity-50 [mask-image:radial-gradient(ellipse_70%_60%_at_50%_40%,#000_30%,transparent_75%)]" />
 
-      <div className="container-narrow relative z-[2] grid w-full items-center gap-20 px-4 sm:px-6 md:px-10 lg:grid-cols-[1.25fr_0.9fr] lg:gap-12 lg:px-16">
+      <div className="container-narrow relative z-[2] grid items-center gap-20 lg:grid-cols-[1.25fr_0.9fr] lg:gap-12">
         <div className="md:text-center lg:text-left">
           <span className="inline-flex items-center gap-2.5 rounded-full border border-emerald-400/30 bg-emerald-400/[0.08] py-2 pl-3 pr-4 text-[13px] text-ink-100">
             <span className="relative flex h-2 w-2">
