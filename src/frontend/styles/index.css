@@ -65,11 +65,13 @@
 
 @layer components {
   .section-padding {
-    @apply px-4 py-24 sm:px-6 md:px-10 md:py-32 lg:px-16;
+    @apply py-24 md:py-32;
   }
 
+  /* The one content box shared by the navbar, every section and the footer:
+     responsive side gutter + 1100px max content width, so all their edges line up. */
   .container-narrow {
-    @apply mx-auto max-w-6xl;
+    @apply mx-auto w-full max-w-[calc(1100px+8rem)] px-4 sm:px-6 md:px-10 lg:px-16;
   }
 
   .eyebrow {
