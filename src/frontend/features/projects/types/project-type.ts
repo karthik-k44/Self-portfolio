@@ -12,6 +12,8 @@ export type ProjectType = {
   featured: boolean;
   /** false while the demo is down — the preview shows an offline panel instead of a live glimpse */
   live: boolean;
+  /** still under active development — marked with a "Currently building" badge */
+  inProgress?: boolean;
   /** colour scheme the site is captured in — for sites that follow `prefers-color-scheme` */
   glimpseTheme?: GlimpseThemeType;
 };

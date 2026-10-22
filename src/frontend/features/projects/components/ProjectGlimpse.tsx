@@ -64,8 +64,13 @@ export default function ProjectGlimpse({ project, compact = false, className }: 
                 variant="pill"
                 className="absolute bottom-3.5 left-3.5 border-ink-500/25 bg-ink-950/80 text-xs text-ink-100 backdrop-blur-md"
               >
-                <span className="h-[7px] w-[7px] rounded-full bg-emerald-400 shadow-[0_0_10px] shadow-emerald-400" />
-                Live site
+                <span
+                  className={cn(
+                    'h-[7px] w-[7px] rounded-full shadow-[0_0_10px]',
+                    project.inProgress ? 'bg-amber-400 shadow-amber-400' : 'bg-emerald-400 shadow-emerald-400'
+                  )}
+                />
+                {project.inProgress ? 'Live · in development' : 'Live site'}
               </Badge>
             )}
           </>
