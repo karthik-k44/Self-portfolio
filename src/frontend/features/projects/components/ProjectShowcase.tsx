@@ -1,6 +1,7 @@
 import { Badge } from '@/frontend/components/badge/Badge';
 import { cn } from '@/frontend/lib/utils';
 import type { ProjectType } from '../types';
+import InProgressBadge from './InProgressBadge';
 import ProjectGlimpse from './ProjectGlimpse';
 import ProjectLinks from './ProjectLinks';
 
@@ -32,9 +33,12 @@ export default function ProjectShowcase({ project, index }: ProjectShowcaseProps
       </div>
 
       <div className="reveal" style={{ ['--reveal-delay' as string]: '120ms' }}>
-        <span className="text-outline block font-display text-[clamp(54px,7vw,92px)] font-extrabold leading-[0.9] tracking-[-0.05em] [-webkit-text-stroke-color:#40475e]">
-          {String(index + 1).padStart(2, '0')}
-        </span>
+        <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
+          <span className="text-outline block font-display text-[clamp(54px,7vw,92px)] font-extrabold leading-[0.9] tracking-[-0.05em] [-webkit-text-stroke-color:#40475e]">
+            {String(index + 1).padStart(2, '0')}
+          </span>
+          {project.inProgress && <InProgressBadge />}
+        </div>
         <h3 className="mt-2.5 font-display text-[clamp(28px,3.4vw,42px)] font-bold leading-[1.05] tracking-[-0.035em] text-ink-50">
           {project.title}
         </h3>

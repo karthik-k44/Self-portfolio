@@ -1,5 +1,6 @@
 import { Card } from '@/frontend/components/card/Card';
 import type { ProjectType } from '../types';
+import InProgressBadge from './InProgressBadge';
 import ProjectGlimpse from './ProjectGlimpse';
 import ProjectLinks from './ProjectLinks';
 
@@ -21,6 +22,7 @@ export default function ProjectMini({ project, index }: ProjectMiniProps) {
           <h3 className="font-display text-xl font-bold tracking-[-0.02em] text-ink-50">{project.title}</h3>
           <span className="font-mono text-xs text-accent-400">{project.kind}</span>
         </div>
+        {project.inProgress && <InProgressBadge className="mt-3 self-start" />}
         <p className="mt-2 flex-1 text-sm leading-relaxed text-ink-400">{project.description}</p>
         <div className="mt-5">
           <ProjectLinks project={project} />

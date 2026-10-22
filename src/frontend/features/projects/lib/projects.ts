@@ -2,6 +2,29 @@ import type { ProjectType } from '../types';
 
 export const projects: ProjectType[] = [
   {
+    title: 'StockMotion',
+    kind: 'Real-time Inventory · Full stack',
+    description:
+      'Real-time inventory for businesses that never stop moving Stock, orders and deliveries in sync across your team — with problems flagged early: shortages before a sale is lost, late trucks, orders stuck mid-pick.',
+    github: 'https://github.com/karthik-k44/Stock-Motion',
+    demo: 'https://stock-motion-dev.vercel.app/',
+    tags: [
+      'React',
+      'Node.js',
+      'Express',
+      'Tailwind',
+      'TypeScript',
+      'MongoDB',
+      'OpenAI API',
+      'JWT',
+    ],
+    glow: 'from-violet-600 to-violet-400',
+    featured: true,
+    live: true,
+    inProgress: true,
+    glimpseTheme: 'light',
+  },
+  {
     title: 'SkillSphere',
     kind: 'AI career toolkit · Full stack',
     description:
@@ -12,8 +35,6 @@ export const projects: ProjectType[] = [
       'React',
       'Node.js',
       'Express',
-      'Redux Toolkit',
-      'Formik',
       'Tailwind',
       'TypeScript',
       'MongoDB',
@@ -46,18 +67,6 @@ export const projects: ProjectType[] = [
     demo: 'https://meditrackapplication.netlify.app/',
     tags: ['React', 'Tailwind', 'TypeScript', 'Firebase'],
     glow: 'from-cyan-700 to-emerald-400',
-    featured: true,
-    live: true,
-  },
-  {
-    title: 'Ocean Defender',
-    kind: 'Canvas arcade game',
-    description:
-      'A canvas-based game where a player navigates a spaceship through an environment, fending off enemies with projectiles.',
-    github: 'https://github.com/karthik-k44/Ocean-Defender',
-    demo: 'https://ocean-defender.vercel.app/',
-    tags: ['React', 'Tailwind', 'TypeScript'],
-    glow: 'from-sky-600 to-indigo-500',
     featured: false,
     live: true,
   },
