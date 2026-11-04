@@ -7,7 +7,7 @@ export const projects: ProjectType[] = [
     description:
       'Real-time inventory for businesses that never stop moving Stock, orders and deliveries in sync across your team — with problems flagged early: shortages before a sale is lost, late trucks, orders stuck mid-pick.',
     github: 'https://github.com/karthik-k44/Stock-Motion',
-    demo: 'https://stock-motion-dev.vercel.app/',
+    demo: 'https://stock-motion.onrender.com/',
     tags: [
       'React',
       'Node.js',
